@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -19,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="MeasureProfile" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="measure" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -30,26 +29,25 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "readMeasureTypesResponse", propOrder = {
-    "measureProfile"
+    "measure"
 })
 public class ReadMeasureTypesResponse {
 
-    @XmlElement(name = "MeasureProfile")
-    protected List<String> measureProfile;
+    protected List<String> measure;
 
     /**
-     * Gets the value of the measureProfile property.
+     * Gets the value of the measure property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the measureProfile property.
+     * This is why there is not a <CODE>set</CODE> method for the measure property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getMeasureProfile().add(newItem);
+     *    getMeasure().add(newItem);
      * </pre>
      * 
      * 
@@ -59,11 +57,11 @@ public class ReadMeasureTypesResponse {
      * 
      * 
      */
-    public List<String> getMeasureProfile() {
-        if (measureProfile == null) {
-            measureProfile = new ArrayList<String>();
+    public List<String> getMeasure() {
+        if (measure == null) {
+            measure = new ArrayList<String>();
         }
-        return this.measureProfile;
+        return this.measure;
     }
 
 }

@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="MeasureProfile" minOccurs="0">
+ *         &lt;element name="MeasureHistoryView" minOccurs="0">
  *           &lt;complexType>
  *             &lt;complexContent>
  *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -52,35 +52,35 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "readPersonHistoryResponse", propOrder = {
-    "measureProfile"
+    "measureHistoryView"
 })
 public class ReadPersonHistoryResponse {
 
-    @XmlElement(name = "MeasureProfile")
-    protected ReadPersonHistoryResponse.MeasureProfile measureProfile;
+    @XmlElement(name = "MeasureHistoryView")
+    protected ReadPersonHistoryResponse.MeasureHistoryView measureHistoryView;
 
     /**
-     * Gets the value of the measureProfile property.
+     * Gets the value of the measureHistoryView property.
      * 
      * @return
      *     possible object is
-     *     {@link ReadPersonHistoryResponse.MeasureProfile }
+     *     {@link ReadPersonHistoryResponse.MeasureHistoryView }
      *     
      */
-    public ReadPersonHistoryResponse.MeasureProfile getMeasureProfile() {
-        return measureProfile;
+    public ReadPersonHistoryResponse.MeasureHistoryView getMeasureHistoryView() {
+        return measureHistoryView;
     }
 
     /**
-     * Sets the value of the measureProfile property.
+     * Sets the value of the measureHistoryView property.
      * 
      * @param value
      *     allowed object is
-     *     {@link ReadPersonHistoryResponse.MeasureProfile }
+     *     {@link ReadPersonHistoryResponse.MeasureHistoryView }
      *     
      */
-    public void setMeasureProfile(ReadPersonHistoryResponse.MeasureProfile value) {
-        this.measureProfile = value;
+    public void setMeasureHistoryView(ReadPersonHistoryResponse.MeasureHistoryView value) {
+        this.measureHistoryView = value;
     }
 
 
@@ -119,10 +119,10 @@ public class ReadPersonHistoryResponse {
     @XmlType(name = "", propOrder = {
         "measure"
     })
-    public static class MeasureProfile {
+    public static class MeasureHistoryView {
 
         @XmlElement(nillable = true)
-        protected List<ReadPersonHistoryResponse.MeasureProfile.Measure> measure;
+        protected List<ReadPersonHistoryResponse.MeasureHistoryView.Measure> measure;
 
         /**
          * Gets the value of the measure property.
@@ -142,13 +142,13 @@ public class ReadPersonHistoryResponse {
          * 
          * <p>
          * Objects of the following type(s) are allowed in the list
-         * {@link ReadPersonHistoryResponse.MeasureProfile.Measure }
+         * {@link ReadPersonHistoryResponse.MeasureHistoryView.Measure }
          * 
          * 
          */
-        public List<ReadPersonHistoryResponse.MeasureProfile.Measure> getMeasure() {
+        public List<ReadPersonHistoryResponse.MeasureHistoryView.Measure> getMeasure() {
             if (measure == null) {
-                measure = new ArrayList<ReadPersonHistoryResponse.MeasureProfile.Measure>();
+                measure = new ArrayList<ReadPersonHistoryResponse.MeasureHistoryView.Measure>();
             }
             return this.measure;
         }

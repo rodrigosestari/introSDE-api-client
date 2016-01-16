@@ -10,8 +10,9 @@ import javax.xml.ws.Service;
 import systemlogic.processcentricservices.api.sw.Api;
 import systemlogic.processcentricservices.api.sw.GetGoalValitationResponse.Goalview;
 import systemlogic.processcentricservices.api.sw.GetGoalsResponse.Goals;
-import systemlogic.processcentricservices.api.sw.ReadPersonHistoryResponse.MeasureProfile;
-import systemlogic.processcentricservices.soap.sw.Person;
+import systemlogic.processcentricservices.api.sw.ReadPersonHistoryResponse.MeasureHistoryView;
+import systemlogic.processcentricservices.api.sw.ReadPersonResponse.PersonDto;
+
 
 
 public class Client {
@@ -49,9 +50,9 @@ public class Client {
 				case "2": {
 					System.out.print("Person id: ");
 					type = scanner();
-					try {
-						Person p =  api.readPerson(Long.parseLong(type));
-						if (null != p) {
+					try {						
+						PersonDto p =  api.readPerson(Long.parseLong(type));
+						if (null != p) {							
 							idPerson = p.getIdPerson();
 						}
 					} catch (Exception e) {
@@ -85,9 +86,9 @@ public class Client {
 					System.out.print("measure: ");
 					String pmeasure = scanner().toLowerCase();
 					try {
-						MeasureProfile mv = api.readPersonHistory(Long.valueOf(idPerson), pmeasure);
+						MeasureHistoryView mv = api.readPersonHistory(Long.valueOf(idPerson), pmeasure);
 						if (null != mv) {
-							for (MeasureProfile.Measure m : mv.getMeasure()) {
+							for (MeasureHistoryView.Measure m : mv.getMeasure()) {
 								System.out.println(m.toString());
 							}
 

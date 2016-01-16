@@ -127,6 +127,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ReadPersonResponse }
+     * 
+     */
+    public ReadPersonResponse createReadPersonResponse() {
+        return new ReadPersonResponse();
+    }
+
+    /**
+     * Create an instance of {@link ReadPersonResponse.PersonDto }
+     * 
+     */
+    public ReadPersonResponse.PersonDto createReadPersonResponsePersonDto() {
+        return new ReadPersonResponse.PersonDto();
+    }
+
+    /**
+     * Create an instance of {@link ReadPersonResponse.PersonDto.HealthProfile }
+     * 
+     */
+    public ReadPersonResponse.PersonDto.HealthProfile createReadPersonResponsePersonDtoHealthProfile() {
+        return new ReadPersonResponse.PersonDto.HealthProfile();
+    }
+
+    /**
      * Create an instance of {@link ReadPersonHistoryResponse }
      * 
      */
@@ -135,11 +159,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ReadPersonHistoryResponse.MeasureProfile }
+     * Create an instance of {@link ReadPersonHistoryResponse.MeasureHistoryView }
      * 
      */
-    public ReadPersonHistoryResponse.MeasureProfile createReadPersonHistoryResponseMeasureProfile() {
-        return new ReadPersonHistoryResponse.MeasureProfile();
+    public ReadPersonHistoryResponse.MeasureHistoryView createReadPersonHistoryResponseMeasureHistoryView() {
+        return new ReadPersonHistoryResponse.MeasureHistoryView();
     }
 
     /**
@@ -263,14 +287,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ReadPersonResponse }
-     * 
-     */
-    public ReadPersonResponse createReadPersonResponse() {
-        return new ReadPersonResponse();
-    }
-
-    /**
      * Create an instance of {@link ReadPersonList }
      * 
      */
@@ -367,11 +383,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ReadPersonHistoryResponse.MeasureProfile.Measure }
+     * Create an instance of {@link ReadPersonResponse.PersonDto.HealthProfile.MeasureType }
      * 
      */
-    public ReadPersonHistoryResponse.MeasureProfile.Measure createReadPersonHistoryResponseMeasureProfileMeasure() {
-        return new ReadPersonHistoryResponse.MeasureProfile.Measure();
+    public ReadPersonResponse.PersonDto.HealthProfile.MeasureType createReadPersonResponsePersonDtoHealthProfileMeasureType() {
+        return new ReadPersonResponse.PersonDto.HealthProfile.MeasureType();
+    }
+
+    /**
+     * Create an instance of {@link ReadPersonHistoryResponse.MeasureHistoryView.Measure }
+     * 
+     */
+    public ReadPersonHistoryResponse.MeasureHistoryView.Measure createReadPersonHistoryResponseMeasureHistoryViewMeasure() {
+        return new ReadPersonHistoryResponse.MeasureHistoryView.Measure();
     }
 
     /**

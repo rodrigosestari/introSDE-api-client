@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="people" type="{http://www.w3.org/2001/XMLSchema}int" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="person" type="{http://www.w3.org/2001/XMLSchema}int" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -30,26 +30,26 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "readPersonListResponse", propOrder = {
-    "people"
+    "person"
 })
 public class ReadPersonListResponse {
 
     @XmlElement(type = Integer.class)
-    protected List<Integer> people;
+    protected List<Integer> person;
 
     /**
-     * Gets the value of the people property.
+     * Gets the value of the person property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the people property.
+     * This is why there is not a <CODE>set</CODE> method for the person property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getPeople().add(newItem);
+     *    getPerson().add(newItem);
      * </pre>
      * 
      * 
@@ -59,11 +59,11 @@ public class ReadPersonListResponse {
      * 
      * 
      */
-    public List<Integer> getPeople() {
-        if (people == null) {
-            people = new ArrayList<Integer>();
+    public List<Integer> getPerson() {
+        if (person == null) {
+            person = new ArrayList<Integer>();
         }
-        return this.people;
+        return this.person;
     }
 
 }

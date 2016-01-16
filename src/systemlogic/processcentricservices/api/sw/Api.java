@@ -29,6 +29,21 @@ public interface Api {
 
     /**
      * 
+     * @param personId
+     * @return
+     *     returns systemlogic.processcentricservices.api.sw.ReadPersonResponse.PersonDto
+     */
+    @WebMethod
+    @WebResult(name = "PersonDto", targetNamespace = "")
+    @RequestWrapper(localName = "readPerson", targetNamespace = "http://sw.api.processcentricservices.systemlogic/", className = "systemlogic.processcentricservices.api.sw.ReadPerson")
+    @ResponseWrapper(localName = "readPersonResponse", targetNamespace = "http://sw.api.processcentricservices.systemlogic/", className = "systemlogic.processcentricservices.api.sw.ReadPersonResponse")
+    @Action(input = "http://sw.api.processcentricservices.systemlogic/Api/readPersonRequest", output = "http://sw.api.processcentricservices.systemlogic/Api/readPersonResponse")
+    public systemlogic.processcentricservices.api.sw.ReadPersonResponse.PersonDto readPerson(
+        @WebParam(name = "personId", targetNamespace = "")
+        Long personId);
+
+    /**
+     * 
      * @param person
      * @return
      *     returns java.lang.Long
@@ -62,14 +77,14 @@ public interface Api {
      * @param personId
      * @param type
      * @return
-     *     returns systemlogic.processcentricservices.api.sw.ReadPersonHistoryResponse.MeasureProfile
+     *     returns systemlogic.processcentricservices.api.sw.ReadPersonHistoryResponse.MeasureHistoryView
      */
     @WebMethod
-    @WebResult(name = "MeasureProfile", targetNamespace = "")
+    @WebResult(name = "MeasureHistoryView", targetNamespace = "")
     @RequestWrapper(localName = "readPersonHistory", targetNamespace = "http://sw.api.processcentricservices.systemlogic/", className = "systemlogic.processcentricservices.api.sw.ReadPersonHistory")
     @ResponseWrapper(localName = "readPersonHistoryResponse", targetNamespace = "http://sw.api.processcentricservices.systemlogic/", className = "systemlogic.processcentricservices.api.sw.ReadPersonHistoryResponse")
     @Action(input = "http://sw.api.processcentricservices.systemlogic/Api/readPersonHistoryRequest", output = "http://sw.api.processcentricservices.systemlogic/Api/readPersonHistoryResponse")
-    public systemlogic.processcentricservices.api.sw.ReadPersonHistoryResponse.MeasureProfile readPersonHistory(
+    public systemlogic.processcentricservices.api.sw.ReadPersonHistoryResponse.MeasureHistoryView readPersonHistory(
         @WebParam(name = "personId", targetNamespace = "")
         Long personId,
         @WebParam(name = "type", targetNamespace = "")
@@ -77,26 +92,11 @@ public interface Api {
 
     /**
      * 
-     * @param personId
-     * @return
-     *     returns systemlogic.processcentricservices.soap.sw.Person
-     */
-    @WebMethod
-    @WebResult(name = "person", targetNamespace = "http://sw.soap.processcentricservices.systemlogic/")
-    @RequestWrapper(localName = "readPerson", targetNamespace = "http://sw.api.processcentricservices.systemlogic/", className = "systemlogic.processcentricservices.api.sw.ReadPerson")
-    @ResponseWrapper(localName = "readPersonResponse", targetNamespace = "http://sw.api.processcentricservices.systemlogic/", className = "systemlogic.processcentricservices.api.sw.ReadPersonResponse")
-    @Action(input = "http://sw.api.processcentricservices.systemlogic/Api/readPersonRequest", output = "http://sw.api.processcentricservices.systemlogic/Api/readPersonResponse")
-    public Person readPerson(
-        @WebParam(name = "personId", targetNamespace = "")
-        Long personId);
-
-    /**
-     * 
      * @return
      *     returns java.util.List<java.lang.String>
      */
     @WebMethod
-    @WebResult(name = "MeasureProfile", targetNamespace = "")
+    @WebResult(name = "measure", targetNamespace = "")
     @RequestWrapper(localName = "readMeasureTypes", targetNamespace = "http://sw.api.processcentricservices.systemlogic/", className = "systemlogic.processcentricservices.api.sw.ReadMeasureTypes")
     @ResponseWrapper(localName = "readMeasureTypesResponse", targetNamespace = "http://sw.api.processcentricservices.systemlogic/", className = "systemlogic.processcentricservices.api.sw.ReadMeasureTypesResponse")
     @Action(input = "http://sw.api.processcentricservices.systemlogic/Api/readMeasureTypesRequest", output = "http://sw.api.processcentricservices.systemlogic/Api/readMeasureTypesResponse")
@@ -132,7 +132,7 @@ public interface Api {
      *     returns java.util.List<java.lang.Integer>
      */
     @WebMethod
-    @WebResult(name = "people", targetNamespace = "")
+    @WebResult(name = "person", targetNamespace = "")
     @RequestWrapper(localName = "readPersonList", targetNamespace = "http://sw.api.processcentricservices.systemlogic/", className = "systemlogic.processcentricservices.api.sw.ReadPersonList")
     @ResponseWrapper(localName = "readPersonListResponse", targetNamespace = "http://sw.api.processcentricservices.systemlogic/", className = "systemlogic.processcentricservices.api.sw.ReadPersonListResponse")
     @Action(input = "http://sw.api.processcentricservices.systemlogic/Api/readPersonListRequest", output = "http://sw.api.processcentricservices.systemlogic/Api/readPersonListResponse")
