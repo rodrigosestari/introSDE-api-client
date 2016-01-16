@@ -183,7 +183,12 @@ public class ReadPersonHistoryResponse {
         })
         public static class Measure {
 
-            protected Integer mid;
+            @Override
+			public String toString() {
+				return "Measure [mid=" + mid + ", value=" + value + ", created=" + created + "]";
+			}
+
+			protected Integer mid;
             protected float value;
             @XmlElement(required = true)
             protected String created;

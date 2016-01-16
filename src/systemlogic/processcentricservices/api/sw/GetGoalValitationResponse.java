@@ -208,7 +208,13 @@ public class GetGoalValitationResponse {
     })
     public static class Goalview {
 
-        @XmlElement(required = true)
+        @Override
+		public String toString() {
+			return "Goalview [ \n goaltype=" + goaltype + ", \n goals=" + goals + "]";
+		}
+
+
+		@XmlElement(required = true)
         protected GetGoalValitationResponse.Goalview.Goaltype goaltype;
         @XmlElement(nillable = true)
         protected List<GetGoalValitationResponse.Goalview.Goals> goals;
@@ -298,7 +304,13 @@ public class GetGoalValitationResponse {
         })
         public static class Goals {
 
-            protected float expectedValue;
+            @Override
+			public String toString() {
+				return "Goals [expectedValue=" + expectedValue + ", value=" + value + ", result=" + result + ", data="
+						+ data + "]";
+			}
+
+			protected float expectedValue;
             protected float value;
             @XmlElement(required = true)
             protected String result;
@@ -451,7 +463,15 @@ public class GetGoalValitationResponse {
         })
         public static class Goaltype {
 
-            protected int idGoal;
+            @Override
+			public String toString() {
+				return "Goaltype [idGoal=" + idGoal + ", start=" + start + ", end=" + end + ", type=" + type
+						+ ", signal=" + signal + ", value=" + value + ", measureDefinition=" + measureDefinition
+						+ ", person=" + person + "]";
+			}
+
+
+			protected int idGoal;
             @XmlElement(required = true)
             @XmlSchemaType(name = "date")
             protected XMLGregorianCalendar start;

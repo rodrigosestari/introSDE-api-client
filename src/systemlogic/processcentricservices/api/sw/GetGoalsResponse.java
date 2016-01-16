@@ -274,7 +274,15 @@ public class GetGoalsResponse {
         })
         public static class Goal {
 
-            protected int idGoal;
+            @Override
+			public String toString() {
+				return "Goal [idGoal=" + idGoal + ", start=" + start + ", end=" + end + ", type=" + type + ", signal="
+						+ signal + ", value=" + value + ",\n measureDefinition=" + measureDefinition + ", \n person="
+						+ person + "]";
+			}
+
+
+			protected int idGoal;
             @XmlElement(required = true)
             @XmlSchemaType(name = "date")
             protected XMLGregorianCalendar start;
@@ -495,7 +503,12 @@ public class GetGoalsResponse {
             })
             public static class MeasureDefinition {
 
-                protected int idMeasureDef;
+                @Override
+				public String toString() {
+					return "MeasureDefinition [idMeasureDef=" + idMeasureDef + ", measureName=" + measureName + "]";
+				}
+
+				protected int idMeasureDef;
                 @XmlElement(required = true)
                 protected String measureName;
 
@@ -571,7 +584,12 @@ public class GetGoalsResponse {
             })
             public static class Person {
 
-                protected int idPerson;
+                @Override
+				public String toString() {
+					return "Person [idPerson=" + idPerson + ", firstname=" + firstname + ", lastname=" + lastname + "]";
+				}
+
+				protected int idPerson;
                 @XmlElement(required = true)
                 protected String firstname;
                 @XmlElement(required = true)
