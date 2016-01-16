@@ -15,6 +15,7 @@ import systemlogic.processcentricservices.api.sw.ReadPersonResponse.PersonDto;
 
 
 
+
 public class Client {
 
 	static URL url = null;
@@ -39,6 +40,8 @@ public class Client {
 			if (null == idPerson) {
 				System.out.println("1 - List id all People");
 				System.out.println("2 - Enter person");
+				System.out.println("3 - Create person");
+				System.out.println("4 - Delete person");
 				System.out.println("e - exit");
 				type = scanner();
 				switch (type) {
@@ -54,6 +57,43 @@ public class Client {
 						PersonDto p =  api.readPerson(Long.parseLong(type));
 						if (null != p) {							
 							idPerson = p.getIdPerson();
+						}
+					} catch (Exception e) {
+						idPerson = null;
+					}
+
+				}
+				break;
+				case "3": {
+					System.out.print("First name: ");
+					String fname = scanner();
+					System.out.print("Last name: ");
+					String lname = scanner();
+					try {			
+
+						systemlogic.processcentricservices.api.sw.CreatePerson.PersonDto p =  new  systemlogic.processcentricservices.api.sw.CreatePerson.PersonDto();
+						p.setFirstname(fname);
+						p.setLastname(lname);
+						p.setIdPerson(0);
+						Long value = api.createPerson(p);
+						if (null != value){
+							System.out.println("Person  created: " +value);
+						}
+
+					} catch (Exception e) {
+						idPerson = null;
+					}
+
+				}
+				break;
+				case "4": {
+					System.out.print("Person id: ");
+					type = scanner();
+					try {						
+						Integer p =  api.deletePerson(Long.parseLong(type));
+
+						if (null != p) {							
+							System.out.println("Person deleted");
 						}
 					} catch (Exception e) {
 						idPerson = null;
@@ -129,7 +169,7 @@ public class Client {
 				case "4": {
 					try {
 						Goals glist = api.getGoals(Long.valueOf(idPerson)); 
-								
+
 						if (null != glist) {
 							for (Goals.Goal goal : glist.getGoal()) {
 								System.out.println(goal.toString());
@@ -149,9 +189,9 @@ public class Client {
 						System.out.print("ID goal: ");
 						String idgoal = scanner();
 						Goalview goal = api.getGoalValitation(Long.parseLong(idgoal)); 
-								
+
 						if (null != goal) {
-							System.out.print(goal.toString());
+							System.out.println(goal.toString());
 
 						}else{
 							System.out.println("don't exist");
@@ -204,15 +244,15 @@ public class Client {
 						case "w":
 							result = api.importMeasure(Long.valueOf(idPerson), token,"Weight");
 							break;
-							
+
 						case "b":
 							result = api.importMeasure(Long.valueOf(idPerson), token,"BloodPressure");
 							break;
-							
+
 						default:
 							break;
 						}
-						
+
 						if (result) {
 							System.out.println("measure imported");
 						} else {

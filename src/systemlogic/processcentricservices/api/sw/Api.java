@@ -10,7 +10,6 @@ import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.ws.Action;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
-import systemlogic.processcentricservices.soap.sw.Person;
 
 
 /**
@@ -26,36 +25,6 @@ import systemlogic.processcentricservices.soap.sw.Person;
 })
 public interface Api {
 
-
-    /**
-     * 
-     * @param personId
-     * @return
-     *     returns systemlogic.processcentricservices.api.sw.ReadPersonResponse.PersonDto
-     */
-    @WebMethod
-    @WebResult(name = "PersonDto", targetNamespace = "")
-    @RequestWrapper(localName = "readPerson", targetNamespace = "http://sw.api.processcentricservices.systemlogic/", className = "systemlogic.processcentricservices.api.sw.ReadPerson")
-    @ResponseWrapper(localName = "readPersonResponse", targetNamespace = "http://sw.api.processcentricservices.systemlogic/", className = "systemlogic.processcentricservices.api.sw.ReadPersonResponse")
-    @Action(input = "http://sw.api.processcentricservices.systemlogic/Api/readPersonRequest", output = "http://sw.api.processcentricservices.systemlogic/Api/readPersonResponse")
-    public systemlogic.processcentricservices.api.sw.ReadPersonResponse.PersonDto readPerson(
-        @WebParam(name = "personId", targetNamespace = "")
-        Long personId);
-
-    /**
-     * 
-     * @param person
-     * @return
-     *     returns java.lang.Long
-     */
-    @WebMethod
-    @WebResult(name = "personId", targetNamespace = "")
-    @RequestWrapper(localName = "createPerson", targetNamespace = "http://sw.api.processcentricservices.systemlogic/", className = "systemlogic.processcentricservices.api.sw.CreatePerson")
-    @ResponseWrapper(localName = "createPersonResponse", targetNamespace = "http://sw.api.processcentricservices.systemlogic/", className = "systemlogic.processcentricservices.api.sw.CreatePersonResponse")
-    @Action(input = "http://sw.api.processcentricservices.systemlogic/Api/createPersonRequest", output = "http://sw.api.processcentricservices.systemlogic/Api/createPersonResponse")
-    public Long createPerson(
-        @WebParam(name = "person", targetNamespace = "http://sw.soap.processcentricservices.systemlogic/")
-        Person person);
 
     /**
      * 
@@ -140,6 +109,36 @@ public interface Api {
 
     /**
      * 
+     * @param personDto
+     * @return
+     *     returns java.lang.Long
+     */
+    @WebMethod
+    @WebResult(name = "personId", targetNamespace = "")
+    @RequestWrapper(localName = "createPerson", targetNamespace = "http://sw.api.processcentricservices.systemlogic/", className = "systemlogic.processcentricservices.api.sw.CreatePerson")
+    @ResponseWrapper(localName = "createPersonResponse", targetNamespace = "http://sw.api.processcentricservices.systemlogic/", className = "systemlogic.processcentricservices.api.sw.CreatePersonResponse")
+    @Action(input = "http://sw.api.processcentricservices.systemlogic/Api/createPersonRequest", output = "http://sw.api.processcentricservices.systemlogic/Api/createPersonResponse")
+    public Long createPerson(
+        @WebParam(name = "PersonDto", targetNamespace = "")
+        systemlogic.processcentricservices.api.sw.CreatePerson.PersonDto personDto);
+
+    /**
+     * 
+     * @param personId
+     * @return
+     *     returns systemlogic.processcentricservices.api.sw.ReadPersonResponse.PersonDto
+     */
+    @WebMethod
+    @WebResult(name = "PersonDto", targetNamespace = "")
+    @RequestWrapper(localName = "readPerson", targetNamespace = "http://sw.api.processcentricservices.systemlogic/", className = "systemlogic.processcentricservices.api.sw.ReadPerson")
+    @ResponseWrapper(localName = "readPersonResponse", targetNamespace = "http://sw.api.processcentricservices.systemlogic/", className = "systemlogic.processcentricservices.api.sw.ReadPersonResponse")
+    @Action(input = "http://sw.api.processcentricservices.systemlogic/Api/readPersonRequest", output = "http://sw.api.processcentricservices.systemlogic/Api/readPersonResponse")
+    public systemlogic.processcentricservices.api.sw.ReadPersonResponse.PersonDto readPerson(
+        @WebParam(name = "personId", targetNamespace = "")
+        Long personId);
+
+    /**
+     * 
      * @param personId
      * @param type
      * @param token
@@ -161,7 +160,7 @@ public interface Api {
 
     /**
      * 
-     * @param goalID
+     * @param personId
      * @return
      *     returns systemlogic.processcentricservices.api.sw.GetGoalsResponse.Goals
      */
@@ -171,8 +170,8 @@ public interface Api {
     @ResponseWrapper(localName = "getGoalsResponse", targetNamespace = "http://sw.api.processcentricservices.systemlogic/", className = "systemlogic.processcentricservices.api.sw.GetGoalsResponse")
     @Action(input = "http://sw.api.processcentricservices.systemlogic/Api/getGoalsRequest", output = "http://sw.api.processcentricservices.systemlogic/Api/getGoalsResponse")
     public systemlogic.processcentricservices.api.sw.GetGoalsResponse.Goals getGoals(
-        @WebParam(name = "goalID", targetNamespace = "")
-        Long goalID);
+        @WebParam(name = "personId", targetNamespace = "")
+        Long personId);
 
     /**
      * 
