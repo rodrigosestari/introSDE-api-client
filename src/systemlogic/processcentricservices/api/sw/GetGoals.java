@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="goalID" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
+ *         &lt;element name="personId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -27,34 +27,34 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "getGoals", propOrder = {
-    "goalID"
+    "personId"
 })
 public class GetGoals {
 
-    protected Long goalID;
+    protected Long personId;
 
     /**
-     * Gets the value of the goalID property.
+     * Gets the value of the personId property.
      * 
      * @return
      *     possible object is
      *     {@link Long }
      *     
      */
-    public Long getGoalID() {
-        return goalID;
+    public Long getPersonId() {
+        return personId;
     }
 
     /**
-     * Sets the value of the goalID property.
+     * Sets the value of the personId property.
      * 
      * @param value
      *     allowed object is
      *     {@link Long }
      *     
      */
-    public void setGoalID(Long value) {
-        this.goalID = value;
+    public void setPersonId(Long value) {
+        this.personId = value;
     }
 
 }

@@ -277,7 +277,7 @@ public class GetGoalsResponse {
             @Override
 			public String toString() {
 				return "Goal [idGoal=" + idGoal + ", start=" + start + ", end=" + end + ", type=" + type + ", signal="
-						+ signal + ", value=" + value + ",\n measureDefinition=" + measureDefinition + ", \n person="
+						+ signal + ", value=" + value + ", \n measureDefinition=" + measureDefinition + ", \n person="
 						+ person + "]";
 			}
 

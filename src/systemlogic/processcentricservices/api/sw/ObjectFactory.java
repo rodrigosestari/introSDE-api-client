@@ -167,6 +167,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CreatePerson }
+     * 
+     */
+    public CreatePerson createCreatePerson() {
+        return new CreatePerson();
+    }
+
+    /**
+     * Create an instance of {@link CreatePerson.PersonDto }
+     * 
+     */
+    public CreatePerson.PersonDto createCreatePersonPersonDto() {
+        return new CreatePerson.PersonDto();
+    }
+
+    /**
+     * Create an instance of {@link CreatePerson.PersonDto.HealthProfile }
+     * 
+     */
+    public CreatePerson.PersonDto.HealthProfile createCreatePersonPersonDtoHealthProfile() {
+        return new CreatePerson.PersonDto.HealthProfile();
+    }
+
+    /**
      * Create an instance of {@link systemlogic.processcentricservices.api.sw.Goalview.Goaltype }
      * 
      */
@@ -236,14 +260,6 @@ public class ObjectFactory {
      */
     public GetGoalValitation createGetGoalValitation() {
         return new GetGoalValitation();
-    }
-
-    /**
-     * Create an instance of {@link CreatePerson }
-     * 
-     */
-    public CreatePerson createCreatePerson() {
-        return new CreatePerson();
     }
 
     /**
@@ -396,6 +412,14 @@ public class ObjectFactory {
      */
     public ReadPersonHistoryResponse.MeasureHistoryView.Measure createReadPersonHistoryResponseMeasureHistoryViewMeasure() {
         return new ReadPersonHistoryResponse.MeasureHistoryView.Measure();
+    }
+
+    /**
+     * Create an instance of {@link CreatePerson.PersonDto.HealthProfile.MeasureType }
+     * 
+     */
+    public CreatePerson.PersonDto.HealthProfile.MeasureType createCreatePersonPersonDtoHealthProfileMeasureType() {
+        return new CreatePerson.PersonDto.HealthProfile.MeasureType();
     }
 
     /**

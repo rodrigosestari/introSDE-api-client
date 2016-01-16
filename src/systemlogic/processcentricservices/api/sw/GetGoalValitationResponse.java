@@ -210,7 +210,7 @@ public class GetGoalValitationResponse {
 
         @Override
 		public String toString() {
-			return "Goalview [ \n goaltype=" + goaltype + ", \n goals=" + goals + "]";
+			return "Goalview [goaltype=" + goaltype + ", goals=" + goals + "]";
 		}
 
 
@@ -306,7 +306,7 @@ public class GetGoalValitationResponse {
 
             @Override
 			public String toString() {
-				return "Goals [expectedValue=" + expectedValue + ", value=" + value + ", result=" + result + ", data="
+				return "\n Goals [expectedValue=" + expectedValue + ", value=" + value + ", result=" + result + ", data="
 						+ data + "]";
 			}
 
@@ -465,9 +465,9 @@ public class GetGoalValitationResponse {
 
             @Override
 			public String toString() {
-				return "Goaltype [idGoal=" + idGoal + ", start=" + start + ", end=" + end + ", type=" + type
-						+ ", signal=" + signal + ", value=" + value + ", measureDefinition=" + measureDefinition
-						+ ", person=" + person + "]";
+				return "\n Goaltype [idGoal=" + idGoal + ", start=" + start + ", end=" + end + ", type=" + type
+						+ ", signal=" + signal + ", value=" + value + ",\n   measureDefinition=" + measureDefinition
+						+ ", \n   person=" + person + "]";
 			}
 
 
@@ -692,7 +692,12 @@ public class GetGoalValitationResponse {
             })
             public static class MeasureDefinition {
 
-                protected int idMeasureDef;
+                @Override
+				public String toString() {
+					return "MeasureDefinition [idMeasureDef=" + idMeasureDef + ", measureName=" + measureName + "]";
+				}
+
+				protected int idMeasureDef;
                 @XmlElement(required = true)
                 protected String measureName;
 
@@ -768,7 +773,12 @@ public class GetGoalValitationResponse {
             })
             public static class Person {
 
-                protected int idPerson;
+                @Override
+				public String toString() {
+					return "Person [idPerson=" + idPerson + ", firstname=" + firstname + ", lastname=" + lastname + "]";
+				}
+
+				protected int idPerson;
                 @XmlElement(required = true)
                 protected String firstname;
                 @XmlElement(required = true)
